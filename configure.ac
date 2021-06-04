@@ -65,7 +65,7 @@ PKG_CHECK_MODULES(uuid, uuid,
 
 dnl gnu-efi headers require extra include dirs
 EFI_ARCH=$(uname -m | sed 's/i.86/ia32/;s/arm.*/arm/')
-AM_CONDITIONAL(TEST_BINARY_FORMAT, [ test "$EFI_ARCH" = "arm" -o "$EFI_ARCH" = "aarch64" ])
+AM_CONDITIONAL(TEST_BINARY_FORMAT, [ test "$EFI_ARCH" = "arm" -o "$EFI_ARCH" = "aarch64" -o "$EFI_ARCH" = riscv64 ])
 
 ##
 # no consistent view of where gnu-efi should dump the efi stuff, so find it
