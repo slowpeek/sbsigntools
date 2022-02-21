@@ -251,7 +251,7 @@ static int add_auth_descriptor(struct varsign_context *ctx)
 	md = EVP_get_digestbyname("SHA256");
 
 	p7 = PKCS7_new();
-	flags = PKCS7_BINARY | PKCS7_DETACHED | PKCS7_NOSMIMECAP;;
+	flags = PKCS7_BINARY | PKCS7_DETACHED | PKCS7_NOSMIMECAP | PKCS7_NOATTR;;
 	PKCS7_set_type(p7, NID_pkcs7_signed);
 
 	PKCS7_content_new(p7, NID_pkcs7_data);
